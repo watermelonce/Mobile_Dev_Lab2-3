@@ -1,25 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:dice_roller_app/die.dart';
 
 void main() {
   runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
               colors: [
                  Color.fromARGB(255, 153, 203, 244),
                  Color.fromARGB(255, 242, 167, 192),]
             ),
           ),
-          child: Center(
+          child: const Center(
             child: Column(
               mainAxisSize :MainAxisSize.min,
               children: [
-                const Text("Image"),
-                TextButton(onPressed: () {}, child: const Text("Press Me")),
+                Die(),
+                SizedBox(height: 20),
+                Text(
+                  "Press the dice to roll it",
+                  style: TextStyle(fontSize: 20),
+                ),
               ],
             ),
           ),
